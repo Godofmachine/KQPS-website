@@ -71,6 +71,7 @@ Version: 1.0.0
 }
 .theme-btn:hover {
   color: var(--white);
+  background-color: var(--bg4);
 }
 .theme-btn:hover::before {
   animation: criss-cross-left 0.8s both;
@@ -396,14 +397,17 @@ span {
   }
 }
 .about-wrapper .about-content .about-list ul li {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   font-family: "Quicksand", sans-serif;
   color: var(--header);
   background-color: var(--white);
   box-shadow: var(--box-shadow);
-  padding: 10px 45px 10px 10px;
+  padding: 8px 20px 8px 10px;
+  align-items: center;
   border-radius: 30px;
+  display: flex;
+  gap: 4px;
 }
 .about-wrapper .about-content .about-list ul li:not(:last-child) {
   margin-bottom: 24px;
@@ -1543,7 +1547,7 @@ span {
 }
 .contact-wrapper-2 .contact-left-items .video-image img {
   width: 100%;
-  height: 100%;
+  height: 30%;
   border-radius: 0px 0px 16px 16px;
 }
 .contact-wrapper-2 .contact-left-items .video-image .video-box {
@@ -3265,9 +3269,9 @@ span {
   color: var(--theme);
 }
 .footer-bottom .scroll-icon {
-  position: absolute;
-  left: 90.2%;
-  top: -40px;
+  position: fixed;
+  right: 0%;
+  bottom: 50px;
   transform: translateX(-50%);
   width: 70px;
   height: 70px;
@@ -3277,13 +3281,30 @@ span {
   text-align: center;
   color: var(--white);
   border: 5px solid var(--white);
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
   z-index: 99;
+}
+.footer-bottom .scroll-icon i {
+  text-align: center;
+  margin: auto;
+  justify-items: center;
+
 }
 @media (max-width: 1399px) {
   .footer-bottom .scroll-icon {
-    left: 50%;
+    /* left: 50%; */
+    width: 50px;
+    height: 50px;
+    
   }
+  
+}
+.footer-bottom .scroll-icon:hover{
+  background-color: var(--bg4);
+  color: var(--white);
 }
 
 .footer-section {
@@ -8590,3 +8611,200 @@ input.main-search-input::placeholder {
     margin-left: 0;
   }
 }/*# sourceMappingURL=main.css.map */
+
+.fancybox__container {
+  max-width: 50vw;
+  max-height: 50vh;
+}
+
+.gallery-container {
+  position: relative;
+   padding: 100px;
+ 
+ }
+ 
+ .gallery-wrapper {
+     position: relative;
+   overflow-x: auto;
+   width: 100%;
+   max-width: 100%;
+   margin: 0 auto;
+   scroll-behavior: smooth;
+ 
+ }
+ 
+ .gallery-grid {
+   display: grid;
+   width: 200%;
+   /* overflow-x: auto; */
+   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   grid-auto-rows: 200px; /* Control row height */
+   gap: 10px;
+ }
+ 
+ .gallery-item {
+   position: relative;
+   overflow: hidden;
+   transition: transform 0.2s ease;
+   object-fit: cover;
+ }
+ 
+ .gallery-item img {
+   width: 100%;
+   height: 200px;
+   max-height: 250px;
+   display: block;
+   object-fit: cover;
+   border-radius: 5px;
+ }
+ 
+ .gallery-item:hover {
+   transform: scale(1.05);
+ }
+ 
+ @media (min-width: 1024px) {
+   .gallery-grid {
+     grid-template-columns: repeat(10, 1fr);
+   }
+   .gallery-buttons{
+     margin-left: 90%;
+     display: flex;
+     gap: 20px;
+   }
+
+ }
+ 
+ @media (max-width: 900px) {
+   .gallery-grid {
+     grid-template-columns: repeat(6, 1fr);
+   }
+   .gallery-container {
+    position: relative;
+     padding: 80px;
+   
+   }
+   .gallery-buttons{
+    margin-left: 70%;
+    display: flex;
+    gap: 20px;
+   }
+ }
+ 
+ @media (max-width: 768px) {
+   .gallery-grid {
+     grid-template-columns: repeat(6, 1fr);
+   }
+   .gallery-buttons{
+    margin-left: 68%;
+    display: flex;
+    gap: 20px;
+   }
+   .gallery-container {
+    position: relative;
+     padding: 40px;
+   
+   }
+ }
+ 
+ @media (max-width: 480px) {
+  
+  .gallery-buttons{
+    margin-left: 75%;
+    display: flex;
+    gap: 20px;
+       
+  }
+
+  .gallery-container {
+    position: relative;
+     padding: 40px;
+   
+   }
+  .gallery-grid {
+     grid-template-columns: repeat(6, 1fr);
+   }
+ }
+ @media (max-width: 320px) {
+  .gallery-container {
+    position: relative;
+     padding: 40px;
+   
+   }
+  .gallery-buttons{
+    margin-left: 75%;
+    display: flex;
+    gap: 20px;
+       
+  }
+  .gallery-grid {
+     grid-template-columns: repeat(6, 1fr);
+   }
+ }
+ 
+ .gallery-item img:hover {
+   transform: scale(1.1);
+ }
+ 
+ .gallery-buttons{
+  margin-left: 90%;
+  display: flex;
+  gap: 20px;
+ }
+ .scroll-button {
+  
+   transform: translateY(-50%);
+   color: var(--white);
+   border: none;
+   padding: 8px;
+   width: 60px;
+   cursor: pointer;
+   border-radius: 10px;
+   box-shadow: #5C707E;
+   /* border: solid 2px var(--bg2); */
+ }
+ #scroll-left-button {
+   left: 15px;
+   background-color: var(--bg);
+   color: #252527;
+ }
+ #scroll-left-button:hover{
+  background-color: var(--theme);
+  color: var(--bg);
+ }
+ #scroll-right-button {
+   right: 15px;
+   background-color: var(--theme);
+ }
+ .scroll-button:hover {
+  background-color: var(--bg4);
+  color: var(--white);
+ }
+
+ .sub{
+	position: relative;
+	margin: 40px 0
+}
+
+h2.sub::before{
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 3px;
+	background-color: orange;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	animation: animate 4s linear infinite;
+
+}
+	@keyframes animate{
+		0%{
+			width: 100px;
+		}
+		50%{
+			width: 200px;
+		}
+		100%{
+			width: 100px;
+		}
+	}

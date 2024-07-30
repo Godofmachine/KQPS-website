@@ -1,0 +1,338 @@
+
+#header {
+	background-image: url('Rectangle 5.png');
+    background-size: 100% 100%;
+
+	height: device-height;
+	width: 100%;
+	margin-top: -40px;
+	margin-right: -10px;
+	margin-left: -10px;
+	
+	color: #e8fa53;
+
+	padding: 10px;
+
+	text-align: center;
+
+	font-family: cursive;
+	box-shadow: dimgrey;
+	top: 0;
+	position: fixed !important;
+	
+
+}
+#schoolname{
+	width: device-width;
+	
+	font-size: 5vw;
+	
+	margin-top: 0px;
+	margin-bottom: -30px;
+	margin-left: -80px;
+
+}
+#flourish{
+	font-style: italic;
+	color: #eef4b9;
+	font-size: 3vw;
+	width: device-width;
+	height: 90vh;
+	text-align: center;
+	margin-left: -10%;
+	margin-top: -10%;
+}
+
+
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+
+
+
+
+
+input{
+	display: none;
+}
+
+.container{
+	width: 100%;
+	text-align: center;
+}
+
+h1{
+	font-weight: normal;
+	font-size: 35px;
+	position: relative;
+	margin: 40px 0
+}
+
+h1.sub::before{
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 3px;
+	background-color: orange;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	animation: animate 4s linear infinite;
+
+}
+	@keyframes animate{
+		0%{
+			width: 100px;
+		}
+		50%{
+			width: 200px;
+		}
+		100%{
+			width: 100px;
+		}
+	}
+
+	.top-content{
+		background-color: orange;
+		width: 90%;
+		margin: 0 auto 20px auto;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		border-radius: 5px;
+		box-shadow: 3px 3px 5px lightgreen ;
+	}
+
+	.our-photo-gallery{
+		height: 100%;
+		background-color: #00c63b;
+		color: white;
+		line-height: 60px;
+		padding: 0 50px;
+
+	}
+	label {
+		display: inline-block;
+		height: 100%;
+		margin: 0 20px;
+		line-height: 60px;
+		font-size: 18px;
+		cursor: pointer;
+		transition: color .5s;
+		color: white
+	}
+    label:hover{
+    	color:lightgrey; 
+    }
+    	
+    .photo-gallery{
+    	width: 90%;
+    	margin: auto;
+    	display: grid;
+    	grid-template-columns: repeat(4, 1fr);
+    	grid-gap: 20px;
+    }
+	
+
+	.pic{
+		position: relative;
+		height: 230px;
+		border-radius: 10px;
+		box-shadow: 3px 3px 4px lightgreen;
+		cursor: pointer;
+		transition: .5s;
+	}
+	.pic img{
+		width: 100%;
+		height: 100%;
+		border-radius: 10px
+		transition:.5s;
+	}
+
+	.pic::before{
+		content: "PHOTO GALLERY";
+		position: absolute;
+		top: 50%;
+		left:50%;
+		transform: translate(-50%, -50%);
+		color: white;
+		font-size: 22px;
+		font-weight: bold;
+		width: 100px;
+		margin-top: -100px;
+		opacity: 0;
+		transition: .3s;
+		transition-delay: .2s;
+		z-index: 1;
+	}
+
+	.pic:after{
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		border-radius: 10px;
+		width: 100%;
+		height: 0;
+		background-color:rgba(0,0,0,.4);
+		transition: .3s;
+	}
+
+	.pic:hover::after{
+		height: 100%;
+
+	}
+	.pic:hover::before{
+		margin-top: 0;
+		opacity: 1;
+	}
+	#check1:checked ~ .container .photo-gallery .pic{
+		opacity: 1;
+		transform: scale(1);
+		position: relative;
+		transition: .5s;
+	}
+	#check2:checked ~ .container .photo-gallery .facilities{
+		opacity: 1;
+		transform: scale(1);
+		position: relative;
+		
+	}
+
+	#check2:checked ~ .container .photo-gallery .events,
+	#check2:checked ~ .container .photo-gallery .excursion{
+		opacity: 0;
+		transform: scale(0);
+		position: absolute;
+		transition: .0s;
+	}
+
+#check3:checked ~ .container .photo-gallery .events{
+		opacity: 1;
+		transform: scale(1);
+		position: relative;
+		
+	}
+
+	#check3:checked ~ .container .photo-gallery .facilities,
+	#check3:checked ~ .container .photo-gallery .excursion{
+		opacity: 0;
+		transform: scale(0);
+		position: absolute;
+		transition: .0s;
+	}
+
+#check4:checked ~ .container .photo-gallery .excursion{
+		opacity: 1;
+		transform: scale(1);
+		position: relative;
+		
+	}
+
+	#check4:checked ~ .container .photo-gallery .facilities,
+	#check4:checked ~ .container .photo-gallery .events{
+		opacity: 0;
+		transform: scale(0);
+		position: absolute;
+		transition: .0s;
+	}
+
+
+
+
+
+/* The side navigation menu */
+.sidenav {
+  height: 100vh; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  min-height: : 100vh;
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+overflow: auto;
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-image: url('Bgs.png'); 
+  background-size: 100%;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #136909;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f96105;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 10px;}
+  .sidenav a {font-size: 12px;}
+}
+#open{
+	
+	float: left;
+	padding-left: 1vw;
+	color: #eef4b9;
+	margin-top: 0px;
+
+
+}
+#open:hover{color: #f96105;}
+
+
+#container {
+	position: relative;
+	min-height: 100vh;
+}
+
+#wrap {
+
+	padding-bottom: 2.4rem ;
+}
+footer{
+	background-color: black;
+	 position: fixed;
+	  left: 0; right: 0; bottom: 0;
+	   text-align: center;
+	    width: 100%;
+	   color: darkgray;
+	    display:  ;
+	    margin-top: auto;
+	    margin-bottom: -5px;
+}
+
