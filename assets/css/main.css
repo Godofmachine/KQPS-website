@@ -165,7 +165,7 @@ body {
   line-height: 28px;
   color: var(--text);
   background-color: var(--white);
-  padding: 0;
+  padding: 2px;
   margin: 0;
   overflow-x: hidden;
 }
@@ -1448,7 +1448,15 @@ span {
 @media (max-width: 575px) {
   .contact-info-area {
     gap: 30px;
+
   }
+  
+}
+@media (max-width: 325px) {
+  .contact-info-area .contact-info-items .address {
+    width: 50px !important;
+    height: 40px !important;
+   }
 }
 .contact-info-area .contact-info-items {
   display: flex;
@@ -1458,6 +1466,7 @@ span {
   position: relative;
   padding-bottom: 40px;
 }
+
 @media (max-width: 1199px) {
   .contact-info-area .contact-info-items {
     flex-wrap: nowrap;
@@ -1465,23 +1474,28 @@ span {
  
 }
 .contact-info-area .contact-info-items .icon {
-  width: 65px;
-  height: 65px;
-  line-height: 65px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   position: relative;
   border: 2px dotted var(--theme);
   border-radius: 50%;
 }
+
+
 .contact-info-area .contact-info-items .content p {
   color: var(--header);
   margin-bottom: 5px;
 }
-.contact-info-area .contact-info-items .content h3 {
-  font-size: 18px;
+.contact-info-area .contact-info-items .content h5 {
+  font-size: 14px;
   color: var(--header);
 }
-.contact-info-area .contact-info-items .content h3 a {
+.contact-info-area .contact-info-items .content h5 .address{
+  font-size: 12px;
+}
+.contact-info-area .contact-info-items .content h5 a {
   color: var(--header);
 }
 
@@ -1502,7 +1516,7 @@ span {
 }
 
 .contact-wrapper-2 .contact-left-items .contact-info-area-2 {
-  padding: 40px;
+  padding: 32px;
   background-color: var(--theme);
   border-radius: 16px 16px 0px 0px;
 }
@@ -1605,8 +1619,21 @@ span {
 .map-items .googpemap iframe {
   width: 100%;
   height: 600px;
+  border: none;
+  outline: none;
 }
 @media (max-width: 575px) {
+  .contact-wrapper-2 .contact-left-items .contact-info-area-2 .contact-info-items .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .contact-wrapper-2 .contact-left-items .contact-info-area-2 .contact-info-items .icon svg{
+    width: 20px;
+    height: 20px;
+    margin: auto;
+  }
   .map-items .googpemap iframe {
     height: 400px;
   }
@@ -4850,6 +4877,10 @@ span {
     justify-content: center;
     flex-wrap: wrap;
   }
+  .hero-1 .hero-image img{
+    height: 85% !important;
+    z-index: 8;
+  }
 }
 .hero-1 .hero-content .hero-button .video-btn {
   background-color: var(--theme);
@@ -4885,6 +4916,7 @@ span {
   position: relative;
   z-index: 9;  
   top: 100px;
+  
 }
 .hero-1 .hero-image img {
   width: 100%;
@@ -8667,7 +8699,6 @@ input.main-search-input::placeholder {
      grid-template-columns: repeat(10, 1fr);
    }
    .gallery-buttons{
-     margin-left: 90%;
      display: flex;
      gap: 20px;
    }
@@ -8684,7 +8715,6 @@ input.main-search-input::placeholder {
    
    }
    .gallery-buttons{
-    margin-left: 70%;
     display: flex;
     gap: 20px;
    }
@@ -8695,7 +8725,6 @@ input.main-search-input::placeholder {
      grid-template-columns: repeat(6, 1fr);
    }
    .gallery-buttons{
-    margin-left: 68%;
     display: flex;
     gap: 20px;
    }
@@ -8709,29 +8738,36 @@ input.main-search-input::placeholder {
  @media (max-width: 480px) {
   
   .gallery-buttons{
-    margin-left: 75%;
     display: flex;
     gap: 20px;
        
   }
-
+  
+  .gallery-container .scroll-button {
+    width: 40px;
+    font-size: small;
+  }
   .gallery-container {
     position: relative;
-     padding: 40px;
+     padding: 10px;
    
    }
   .gallery-grid {
      grid-template-columns: repeat(6, 1fr);
+     grid-auto-rows: 100px; /* Control row height */
+     gap: 5px;
    }
+   
  }
  @media (max-width: 320px) {
   .gallery-container {
     position: relative;
-     padding: 40px;
+     padding: 10px;
    
    }
+
+  
   .gallery-buttons{
-    margin-left: 75%;
     display: flex;
     gap: 20px;
        
@@ -8746,7 +8782,7 @@ input.main-search-input::placeholder {
  }
  
  .gallery-buttons{
-  margin-left: 90%;
+  /* margin-left: 90%; */
   display: flex;
   gap: 20px;
  }
@@ -8808,3 +8844,6 @@ h2.sub::before{
 			width: 100px;
 		}
 	}
+.p{
+  font-size: medium !important;
+}
